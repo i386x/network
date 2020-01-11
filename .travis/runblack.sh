@@ -1,8 +1,12 @@
 #!/bin/bash
 # SPDX-License-Identifier: MIT
 
-# Run black (the Python formatter). The first script argument is a path to
-# Python interpreter, the rest of arguments are passed to black.
+# A shell wrapper around black (Python formatter). The purpose of this wrapper
+# is to get a user the opportunity to control black from config.sh via setting
+# environment variables.
+
+# The first script argument is a path to Python interpreter, the rest of
+# arguments are passed to black.
 
 # Environment variables:
 #
