@@ -19,7 +19,7 @@
 # Environment variables that not start with LSR_* but have influence on CI
 # process:
 #
-#   * run_pylint.py:
+#   * .travis/runpylint.sh:
 #
 #       - RUN_PYLINT_INCLUDE
 #       - RUN_PYLINT_EXCLUDE
