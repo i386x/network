@@ -24,7 +24,7 @@ ENVPYTHON=$(readlink -f $1)
 SYSPYTHON=$(readlink -f $2)
 shift 2
 
-if lsr_compare_pythons ${ENVPYTHON} -ne ${SYSPYTHON}; then
+if ! lsr_venv_python_matches_system_python ${ENVPYTHON} ${SYSPYTHON}; then
   lsr_info "${ME}: ${1:-<missing command>}:" \
     "Environment Python has no access to system Python libraries. Skipping."
   exit 0

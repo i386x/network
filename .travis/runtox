@@ -22,8 +22,9 @@ BANNERSIZE=90
 lsr_banner "tox" ${BANNERSIZE}
 (set -x; tox); error_code=$?
 
-if lsr_check_python_version python -le '3.4'; then
-  lsr_info "${ME}: Only Python >= 3.5 is allowed to install Ansible. Skipping."
+# Exit prematurely if the environment is not suitable for running
+# Molecule tests.
+if ! lsr_venv_python_matches_system_python; then
   exit $error_code
 fi
 
