@@ -22,9 +22,6 @@ TOPDIR=$(readlink -f ${SCRIPTDIR}/..)
 . ${SCRIPTDIR}/utils.sh
 . ${SCRIPTDIR}/config.sh
 
-# Run user defined hook from .travis/config.sh.
-lsr_runcoveralls_hook "$@"
-
 # Publish the results only if it is desired.
 if [[ -z "${LSR_PUBLISH_COVERAGE}" ]]; then
   lsr_info "${ME}: Publishing coverage report is not enabled. Skipping."

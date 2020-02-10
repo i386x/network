@@ -19,9 +19,6 @@ TOPDIR=$(readlink -f ${SCRIPTDIR}/..)
 . ${SCRIPTDIR}/utils.sh
 . ${SCRIPTDIR}/config.sh
 
-# Run user defined hook from .travis/config.sh.
-lsr_runsyspycmd_hook "$@"
-
 # Sanitize arguments (see https://github.com/tox-dev/tox/issues/1463):
 ENVPYTHON=$(readlink -f $1)
 SYSPYTHON=$(readlink -f $2)
